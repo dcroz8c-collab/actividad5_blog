@@ -1,4 +1,31 @@
 
+.main-header {
+  text-align: center;
+  padding: 50px 20px;
+  background: #ffffff; /* Fondo blanco como el formulario */
+  border: 1px solid #e1e4e8;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.main-header h1 {
+  margin: 0;
+  font-size: 2.8rem;
+  color: #1a1a1a;
+  letter-spacing: -1.5px; /* Un toque moderno en la fuente */
+  font-weight: 800;
+}
+
+.main-header p {
+  margin-top: 15px;
+  color: #6c757d;
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .blog-container {
   max-width: 800px;
   margin: 0 auto;
@@ -9,9 +36,10 @@
   background-color: #ffffff;
   border: 1px solid #e1e4e8;
   border-radius: 12px;
-  padding: 30px;
-  margin-bottom: 40px;
+  padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  margin: 0 auto 30px auto;
 }
 
 .form-section h2 {
@@ -66,23 +94,36 @@
 }
 
 .noticia-card {
-  border-bottom: 2px solid #eee;
-  padding-bottom: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e1e4e8;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
   display: flex;
   gap: 20px;
-  
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.noticia-info h3 {
+  margin: 0 0 10px 0;
+  color: #1a1a1a;
+  font-size: 1.3rem;
+}
+
+.noticia-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .noticia-card img {
   width: 200px;
   height: auto;
+  border-radius: 5px;
 }
 
 .fecha {
   color: gray;
   font-size: 0.9em;
-}
-
-h3 {
-  margin-top: 0;
 }
