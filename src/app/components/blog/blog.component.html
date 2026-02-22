@@ -13,6 +13,7 @@
     <input type="date" [(ngModel)]="nuevaNoticia.fecha">
     <textarea [(ngModel)]="nuevaNoticia.texto" placeholder="Texto de la noticia"></textarea>
     <button (click)="agregarNoticia()">Publicar</button>
+    
   </div>
 </section>
 
@@ -23,13 +24,14 @@
       @for (item of noticias; track item.titulo) {
         <article class="noticia-card">
           <img [src]="item.imagen" [alt]="item.titulo">
-          <div class="card-content">
+          <div class="noticia-info">
             <h3>{{ item.titulo }}</h3>
             <p class="fecha">{{ item.fecha }}</p>
             <p>{{ item.texto }}</p>
+            <a class="leer-mas">Leer más...</a>
           </div>
         </article>
-      }
+    }
     </div>
   </section>
 </div>

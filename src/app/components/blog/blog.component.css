@@ -2,7 +2,7 @@
 .main-header {
   text-align: center;
   padding: 50px 20px;
-  background: #ffffff; /* Fondo blanco como el formulario */
+  background: #ffffff;
   border: 1px solid #e1e4e8;
   border-radius: 12px;
   margin-bottom: 30px;
@@ -13,7 +13,7 @@
   margin: 0;
   font-size: 2.8rem;
   color: #1a1a1a;
-  letter-spacing: -1.5px; /* Un toque moderno en la fuente */
+  letter-spacing: -1.5px;
   font-weight: 800;
 }
 
@@ -104,6 +104,8 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s;
   cursor: pointer;
+  max-height: 200px;
+  overflow: hidden;
 }
 
 .noticia-info h3 {
@@ -112,18 +114,33 @@
   font-size: 1.3rem;
 }
 
+.noticia-info p {
+  line-height: 1.5em;
+  height: 3em;         
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.leer-mas {
+  display: inline-block;
+  color: #007bff;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
 .noticia-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .noticia-card img {
-  width: 200px;           /* Quitamos el max-width y ponemos width fijo */
-  height: 200px;          /* Ponemos el alto igual que el ancho */
-  object-fit: cover;      /* Esto es vital para que no se estire */
-  flex-shrink: 0;         /* Evita que el texto la empuje */
+  width: 200px;          
+  height: 180px;          
+  object-fit: cover;      
+  flex-shrink: 0;         
   border-radius: 8px;
-  display: block;         /* Ayuda a que se comporte como una caja */
+  display: block;         
 }
 
 .fecha {
