@@ -1,1 +1,26 @@
-<p>blog works!</p>
+<div class="blog-container">
+  <section class="form-section">
+    <h2>Publicar nueva noticia</h2>
+    <div class="placeholder-form">
+      <p>Formulario</p>
+    </div>
+  </section>
+
+  <hr>
+
+  <section class="list-section">
+    <h2>Últimas noticias</h2>
+    <div class="noticias-grid">
+      @for (item of noticias; track item.titulo) {
+        <article class="noticia-card">
+          <img [src]="item.imagen" [alt]="item.titulo">
+          <div class="card-content">
+            <h3>{{ item.titulo }}</h3>
+            <p class="fecha">{{ item.fecha }}</p>
+            <p>{{ item.texto }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+</div>

@@ -1,0 +1,41 @@
+
+.blog-container {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-section {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.noticias-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.noticia-card {
+  border-bottom: 2px solid #eee;
+  padding-bottom: 20px;
+  display: flex;
+  gap: 20px;
+  
+}
+
+.noticia-card img {
+  width: 200px;
+  height: auto;
+}
+
+.fecha {
+  color: gray;
+  font-size: 0.9em;
+}
+
+h3 {
+  margin-top: 0;
+}
