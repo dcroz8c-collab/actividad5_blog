@@ -12,7 +12,11 @@
     <input type="text" [(ngModel)]="nuevaNoticia.imagen" placeholder="Ruta imagen">
     <input type="date" [(ngModel)]="nuevaNoticia.fecha">
     <textarea [(ngModel)]="nuevaNoticia.texto" placeholder="Texto de la noticia"></textarea>
-    <button (click)="agregarNoticia()">Publicar</button>
+    <button type="button" (click)="agregarNoticia()">Publicar</button>
+
+@if (mensajeError) {
+  <p class="error">{{ mensajeError }}</p>
+}
     
   </div>
 </section>

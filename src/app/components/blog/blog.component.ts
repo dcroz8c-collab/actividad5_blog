@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class BlogComponent {
 
+  mensajeError: string= '';
+
   nuevaNoticia: Noticia = {
     titulo: '',
     imagen: '',
@@ -33,39 +35,44 @@ export class BlogComponent {
     }
   ];
 
-  agregarNoticia() {
+ agregarNoticia() {
 
-    if (this.nuevaNoticia.titulo == "" || this.nuevaNoticia.texto == "" || this.nuevaNoticia.imagen == "" || this.nuevaNoticia.fecha == "") {
-    alert("Por favor, rellena todos los campos");
+  this.mensajeError = '';
+
+  if (!this.nuevaNoticia.titulo.trim() ||
+      !this.nuevaNoticia.texto.trim() ||
+      !this.nuevaNoticia.imagen.trim() ||
+      !this.nuevaNoticia.fecha.trim()) {
+
+    this.mensajeError = 'Todos los campos son obligatorios.';
     return;
-    }
-
-    if (!this.nuevaNoticia.imagen.startsWith("http") && !this.nuevaNoticia.imagen.startsWith("./assets")) {
-    alert("La imagen debe ser una URL válida o una ruta local");
-    return;
-    }
-
-    if (this.nuevaNoticia.titulo.length < 5) {
-    alert("El título es demasiado corto (mínimo 5 caracteres)");
-    return;
-    }
-  
-  
-  if (this.nuevaNoticia.texto.length < 10) {
-    alert("El contenido de la noticia es muy breve (mínimo 10 caracteres)");
-    return;
-    }
-
-
-  
-
-    this.noticias.push({ ...this.nuevaNoticia });
-
-    this.nuevaNoticia = {
-      titulo: '',
-      imagen: '',
-      texto: '',
-      fecha: ''
-    };
   }
+
+  if (!this.nuevaNoticia.imagen.startsWith('http') &&
+      !this.nuevaNoticia.imagen.startsWith('images/')) {
+
+    this.mensajeError = 'La imagen debe ser una URL válida o una ruta local.';
+    return;
+  }
+
+  if (this.nuevaNoticia.titulo.trim().length < 5) {
+    this.mensajeError = 'El título debe tener al menos 5 caracteres.';
+    return;
+  }
+
+  if (this.nuevaNoticia.texto.trim().length < 10) {
+    this.mensajeError = 'El contenido debe tener al menos 10 caracteres.';
+    return;
+  }
+
+  this.noticias.push({ ...this.nuevaNoticia });
+
+  this.nuevaNoticia = {
+    titulo: '',
+    imagen: '',
+    texto: '',
+    fecha: ''
+  };
+
+}
 }
