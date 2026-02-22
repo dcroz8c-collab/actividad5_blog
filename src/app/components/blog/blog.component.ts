@@ -16,5 +16,12 @@ export class BlogComponent {
       texto: 'Un nuevo estudio confirma que el uso de aceite de oliva y verduras frescas mejora la salud cardiovascular a largo plazo.',
       fecha: '2026-02-22'
     },
+
+    {
+      titulo: 'Destinos rurales para desconectar',
+      imagen: 'images/turismo.jpg',
+      texto: 'El turismo de naturaleza crece este año, con los parques nacionales como los lugares más visitados por los viajeros.',
+      fecha: '2026-02-21'
+    }
   ];
 }
