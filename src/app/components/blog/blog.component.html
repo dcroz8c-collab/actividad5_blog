@@ -1,10 +1,14 @@
 <div class="blog-container">
-  <section class="form-section">
-    <h2>Publicar nueva noticia</h2>
-    <div class="placeholder-form">
-      <p>Formulario</p>
-    </div>
-  </section>
+<section class="form-section">
+  <h2>Crea tu noticia</h2>
+  
+  <div class="form-group"> <input type="text" [(ngModel)]="nuevaNoticia.titulo" placeholder="Título">
+    <input type="text" [(ngModel)]="nuevaNoticia.imagen" placeholder="Ruta imagen">
+    <input type="date" [(ngModel)]="nuevaNoticia.fecha">
+    <textarea [(ngModel)]="nuevaNoticia.texto" placeholder="Texto de la noticia"></textarea>
+    <button (click)="agregarNoticia()">Publicar</button>
+  </div>
+</section>
 
   <hr>
 

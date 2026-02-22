@@ -1,13 +1,21 @@
 import { Component } from '@angular/core';
 import { Noticia } from '../../models/noticia';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-blog',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.css',
 })
 export class BlogComponent {
+
+  nuevaNoticia: Noticia = {
+    titulo: '',
+    imagen: '',
+    texto: '',
+    fecha: ''
+  };
 
   noticias: Noticia[] = [
     {
@@ -24,4 +32,16 @@ export class BlogComponent {
       fecha: '2026-02-21'
     }
   ];
+
+  agregarNoticia() {
+    
+    this.noticias.push({ ...this.nuevaNoticia });
+
+    this.nuevaNoticia = {
+      titulo: '',
+      imagen: '',
+      texto: '',
+      fecha: ''
+    };
+  }
 }
