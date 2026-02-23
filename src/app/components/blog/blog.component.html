@@ -1,0 +1,41 @@
+
+<header class="main-header">
+  <h1>Inspira al mundo hoy</h1>
+  <p>Comparte noticias, reflexiones o descubrimientos</p>
+</header>
+
+<div class="blog-container">
+<section class="form-section">
+  <h2>Crea tu noticia</h2>
+  
+  <div class="form-group"> <input type="text" [(ngModel)]="nuevaNoticia.titulo" placeholder="Título">
+    <input type="text" [(ngModel)]="nuevaNoticia.imagen" placeholder="Ruta imagen">
+    <input type="date" [(ngModel)]="nuevaNoticia.fecha">
+    <textarea [(ngModel)]="nuevaNoticia.texto" placeholder="Texto de la noticia"></textarea>
+    <button type="button" (click)="agregarNoticia()">Publicar</button>
+
+@if (mensajeError) {
+  <p class="error">{{ mensajeError }}</p>
+}
+    
+  </div>
+</section>
+
+
+  <section class="list-section">
+    <h2>Últimas noticias</h2>
+    <div class="noticias-grid">
+      @for (item of noticias; track item.titulo) {
+        <article class="noticia-card">
+          <img [src]="item.imagen" [alt]="item.titulo">
+          <div class="noticia-info">
+            <h3>{{ item.titulo }}</h3>
+            <p class="fecha">{{ item.fecha }}</p>
+            <p>{{ item.texto }}</p>
+            <a class="leer-mas">Leer más...</a>
+          </div>
+        </article>
+    }
+    </div>
+  </section>
+</div>
